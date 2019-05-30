@@ -1,169 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Boxeh</title>
-	<link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset200802.css">
-	<style>
- 		body {
-			background: #1f1f1f;
-		}
- 		#boxeh-layout {
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			padding: 30px;
-			width: 1140px;
-			min-height: 300px;
-			margin: 0 auto;
-		}
- 		.panel {
-			display: inline-block;
-			margin-left: -0.25rem;
-			position: relative;
-			font-size: 0;
-			height: 800px;
-			width: 25%;
-			width: 210px;
-			box-sizing: border-box;
- 		}
- 		/*
-		.panel:nth-child(1) {background-color: #be0406;}
-		.panel:nth-child(2) {background-color: #027c7d;}
-		.panel:nth-child(3) {background-color: #e59501;}
-		.panel:nth-child(4) {background-color: #76a601;}
-		*/
-	
-		.box {
-			position: absolute;
-			transform-origin: center center;
-			background-image: url(data:image/png;base64,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);
-			/* 
-			background-size: 50%;
-			transform: rotate(0);
-			transition: ease, 0.5s, all ;
- 			*/
-		}
- 		.box::after {
-			content: "";
-			display: block;
-			/* padding-top: 100%; */
-		}
- 		@keyframes RotateIn {
-			0% {}
- 			1% {
-				transform: rotate(-360deg);
- 			}
- 			100% {
-				transform: rotate(0);
-				opacity: 0;
-				/* width: 10px;
-				height: 10px; */
-			}
-		}
- 		.box:hover {
-			cursor: pointer;			
-		}
- 		.RotateIn {
-			-webkit-animation: RotateIn 0.5s ease;
-			   -moz-animation: RotateIn 0.5s ease;
-				 -o-animation: RotateIn 0.5s ease;
-					animation: RotateIn 0.5s ease;
-		}
- 		.panel.right .box {right: 0;}
- 		.box-color--red{background-color: #be0406;} 
-		.box-color--olive{background-color: #027c7d;} 
-		.box-color--orange{background-color: #e59501;} 
-		.box-color--nature{background-color: #76a601;}
- 		.dimension-one {width: 25px; height: 25px; background-size: contain;}
-		.dimension-two {width: 60px; height: 60px;}
-		.dimension-three {width: 130px; height: 130px;}
-		.dimension-four {width: 196px; height: 196px;}
- 	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <!-- Desktop browsers (including 16x6, 32x32 & 48x48 PNGs) -->
+    <link rel="shortcut icon" href="favicon.ico">    
+    <!-- Modern browsers (196x196 should cover all modern browsers) -->
+    <link rel="icon" type="image/png" href="unicorn.png">    
+    <!-- iOS & other mobile devices (ideally 180x180, at least 120x120) -->
+    <link rel="apple-touch-icon" href="unicorn.180.png">
 
- 	<link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAC1lBMVEWvISbLEA7BEhKyFRW5FBXDEBK5FA/KEhLODxO5FBHDEg/MEBTGEha9ExOyExK/ISGyBwrGAwHBBAWrBwqpCQi9Awa8BAPCAwW8Awi3BQbKAgW/AgizBQi7BQm6BQXABQKwFRfGAgDFAwapBwifCQS+BAi5BgS7BQSzBgbHAgesCAahCgW1Bge7BQa/ERCrFhfFAQDDBAWcCgamCAbAAwmyBwW9Bge1AwevBgXQAAXEBAi7BgjAAQK9BAXCERGyFBbLAgO/AwadCga2Bgi6BAbAAwbABAewBQa0BgbEBAPIAQXEAwXCBQLCEhS+ExPNAgO7AwiwBgbCBAW/BQLBBATFAQa0BgW6BQa8BQW6BAS/BQPJAwTBAwW5FBexFxbBBACxCQe/BAW5BAS+BAfBAga5AwW6BAW/AwTHAwa4BAW2ExamFhazBAeyBQusBgi5Agi6BAeyBgW1BwivBwa7BAe7BAbAAgXFAgbFBQWvBga7EhesFhWvBQe4BgmvBgO5BAW6BQS4BAS6BAmjBwuqBwnABALIAgXKAwTEBAGoBwjEEBu9Exa8BQS7BQK4Bwa+BQTAAwLBBAe/BAipBga8BAfGAwPIAgPJAgPGBAC7BgPHEBexFRS3BgLHAQS4BQm6BAK5BAa1BQWwCgPMBAbGAQTHAgPJAgTMAgDFEhOxFRO5BQO/BAS6BAi8BQa4BgK3BQWuBQa0CAjBAwfDBAPNAQTLAATJAQPCFBe4FRe9Agi7BQeTCwatBgbPAQXDBAbABAjCAwjCAwTKAQLLAwTEAwbAAQW0FRWwFhecCQi+BAqVDQqgCQjZAATJBAO0CATBBAbFAgXEBAS5Bgm2BQnUAAO+AwLPAgTYAATZAALlAADdAADSAgDXAgTcAADkAADUAADYAALXAAubJyiQGBqVGxuaGRmdGBecGReVGRaSGReXGhmaGBmbGhiaGhmXFxiWGRqYGBieJiWlYpcMAAAAZklEQVQY02NkYEQDAugCCjAGTKk+ugp7FN4pc0Y/dBVxjLvcGbd5M37hhQpko6uoRhfoRheYDcTzk6CcWemMjCsRcp/5QOQOCCdrOkz4OJTuK2Y8bsXIGMN4Ba7jD+t/JiD1CM0SAKXlFIPkMZdWAAAAAElFTkSuQmCC">
-
- </head>
+    <meta name="author" content="Selen Gora">
+    <meta name="description" content="Personal Resumé single page">
+    <title>Selen Gora - Resumé</title>
+</head>
 <body>
+    <main class="container" itemscope itemtype="http://schema.org/Person">
+        <header class="introduction">
+            <h1 class="intro-name"><span itemprop="name">Selen Gora</span></h1>
+            <h2 class="intro-work"><span itemprop="jobTitle">Front-End Developer</span></h2>
+            <p itemprop="homeLocation"><span>Izmir, Turkey</span></p>
+            <p><span itemprop="alumniOf">Saime Salih Konca High School</span> graduate of 2004.</p>
+            <p><a itemprop="email" href="mailto:goraselen@gmail.com">goraselen@gmail.com</a></p>
+        </header>
+        <section>
+            <h2>About</h2>
+            <div>
+                <p itemprop="description">
+                    Front-end developer who currently works at Tourism Industry. Skilled in Sass, Javascript and Html. Cooperating with backend developers on C# and MVC Projects. Currently improving on React.js
+                </p>
+            </div>
+        </section>
+        <section class="skills-and-courses" itemscope itemtype="http://schema.org/ItemList">
+            <h2 itemprop="name">Skills</h2>
+            <h4 itemprop="description">Technical Skills</h4>
+            <ul>
+                <li itemprop="itemListElement">CSS Methodologies: SMACSS, BEM, OOCSS</li>
+                <li itemprop="itemListElement">Bootstrap as Front-end library and SASS as preprocessor</li>
+                <li itemprop="itemListElement">Understanding of SEO best practices and performance</li>
+                <li itemprop="itemListElement">W3C Standards</li>
+                <li itemprop="itemListElement">WAI-ARIA & Accessibility & WCAG</li>
+                <li itemprop="itemListElement">Responsive Web Design (Mobile First Approach)</li>
+                <li itemprop="itemListElement">Markdown</li>
+                <li itemprop="itemListElement">Version Control Systems: SVN, Git, TFS</li>
+                <li itemprop="itemListElement">jQuery, Javascript (New Learner - ReactJS, VueJS and SvelteJS)</li>
+            </ul>
+            <h4 itemprop="description">Libraries</h4>
+            <ul>
+                <li itemprop="itemListElement">Experience of Working with Restful APIs, JSON parsing and DOM manipulation on data-load</li>
+                <li itemprop="itemListElement">Basics of Node.JS, service-workers</li>
+            </ul>
+            <h4 itemprop="description">Software</h4>
+            <ul>
+                <li itemprop="itemListElement">Code: Sublime Text, Atom, VSCode, WebStorm, browser developer tools</li>
+                <li itemprop="itemListElement">Graphics: Photoshop, Illustrator (Novice), Skecth (Novice)</li>
+            </ul>
+            <h4 itemprop="description">Technical Courses</h4>
+            <ol>
+                <li>Ministry of Education - Advanced Web Programming (Issued on 2009)
+                <li>
+                    <a href="CertificateOfCompletion_Css AdvancedLayoutsWithGrid.pdf" target="_blank"
+                    rel="noopener">Css: Advanced Layouts with Grid</a>
+                    , 
+                    <a href="CertificateOfCompletion_AdvancedResponsiveLayoutsWithCssFlexbox.pdf" target="_blank"
+                    rel="noopener">Advanced Responsive Layouts with CSS Flexbox</a>
+                </li>
+                <li><a href="https://www.freecodecamp.org/certification/selengora/responsive-web-design" target="_blank"
+                    rel="noopener">Responsive Web Design</a></li>
+                <li>
+                    <a href="CertificateOfCompletion_Html5Geolocation.pdf" target="_blank"
+                    rel="noopener">HTML5: Geolocation</a>
+                </li>
+                <li>
+                    <a href="CertificateOfCompletion_LearningGraphql.pdf" target="_blank"
+                    rel="noopener">Learning GraphQL</a>
+                </li>
+            </ol>
+        </section>
+        <section class="proffesional-experience">
+            <h2>Experience</h2>
+            <ul class="proffesional-experience--lists">
+                <li>
+            
+                    <h3 class="experience--job-title">Front-End Developer</h3>
+                    <h4 class="experience--company-name">
+                        <span class="is-visually-hidden">Company Name</span>
+                        <a href="https://www.otiholding.com" itemprop="worksFor">Oti Holding</a>
+                    </h4>
+                    <h4 class="experience--dates-employed">
+                        <span class="is-visually-hidden">Dates Employed</span>
+                        <span>Nov 2014 – Present ∙ 4 yrs 7 mos</span>
+                    </h4>
+                    <p class="experience--company-description">
+                        ​I am part of project called GDS (as known as Global Distrubition Services). We are dealing with selling flight ticket and we are provided hotel booking and transfer same time on our websites. 
+                        Before GDS project, I was responsible for make corporate web site, domestic online ticketing website and hotel websites which are owned by Oti Holding.
+                        All project websites are listing below;
 
- 	<div id="boxeh-layout">
-
- 		<div class="panel right">
-			<div class="box dimension-four box-color--red" style="bottom: 0"></div>
-
- 			<div class="box dimension-two box-color--olive" style="bottom: 206px;"></div>
-
- 			<div class="box dimension-one box-color--nature" style="bottom: 276px;"></div>
-			<div class="box dimension-one box-color--olive" style="bottom: 276px; right: 35px;"></div>
-
- 			<div class="box dimension-one box-color--orange" style="bottom: 206px; right: 70px"></div>
-			<div class="box dimension-one box-color--nature" style="bottom: 241px; right: 70px"></div>
-		</div>
-
- 		<div class="panel">
-			<div class="box dimension-two box-color--red" style="bottom: 276px; left: 10px;"></div>
-			<div class="box dimension-two box-color--orange" style="bottom: 206px; left: 10px;"></div>
-			<div class="box dimension-two box-color--nature" style="bottom: 136px; left: 10px;"></div>
-
- 			<div class="box dimension-two box-color--red" style="bottom: 206px; left: 80px;"></div>
-
- 			<div class="box dimension-one box-color--olive" style="bottom: 241px; left: 150px;"></div>
-			<div class="box dimension-one box-color--nature" style="bottom: 241px; left: 185px;"></div>
-			<div class="box dimension-one box-color--orange" style="bottom: 206px; left: 150px;"></div>
-			<div class="box dimension-one box-color--olive" style="bottom: 206px; left: 185px;"></div>
-
-
- 			<div class="box dimension-three box-color--olive" style="bottom: 276px; left: 80px;"></div>
-
-
- 			<div class="box dimension-one box-color--red" style="bottom: 416px; left: 80px;"></div>
-			<div class="box dimension-one box-color--olive" style="bottom: 451px; left: 80px;"></div>
-			<div class="box dimension-one box-color--nature" style="bottom: 416px; left: 115px;"></div>
-			<div class="box dimension-one box-color--orange" style="bottom: 451px; left: 115px;"></div>
-		</div>
-
- 		<div class="panel">
-			<div class="box dimension-one box-color--orange" style="bottom: 276px; left: 10px;"></div>
-			<div class="box dimension-one box-color--olive" style="bottom: 276px; left: 80px;"></div>
-			<div class="box dimension-one box-color--orange" style="bottom: 276px; left: 115px;"></div>
-			<div class="box dimension-one box-color--olive" style="bottom: 276px; left: 150px;"></div>
-			<div class="box dimension-one box-color--nature" style="bottom: 276px; left: 185px;"></div>
-
- 			<div class="box dimension-one box-color--olive" style="bottom: 311px; left: 10px;"></div>
-			<div class="box dimension-one box-color--red" style="bottom: 311px; left: 45px;"></div>
-			<div class="box dimension-one box-color--olive" style="bottom: 311px; left: 80px;"></div>
-			<div class="box dimension-one box-color--olive" style="bottom: 311px; left: 185px;"></div>
-
- 			<div class="box dimension-one box-color--orange" style="bottom: 346px; left: 10px;"></div>
-			<div class="box dimension-one box-color--olive" style="bottom: 346px; left: 45px;"></div>
-			<div class="box dimension-one box-color--red" style="bottom: 346px; left: 185px;"></div>
-
- 		</div>
-
- 		<div class="panel">
-			<div class="box dimension-one box-color--orange" style="bottom: 311px; left: 10px;"></div>
-			<div class="box dimension-one box-color--olive" style="bottom: 346px; left: 45px;"></div>
-			<div class="box dimension-one box-color--nature" style="bottom: 381px; left: 90px;"></div>
-		</div>
-
- 	</div>
-
- 	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-	<script>
- 		
-		
-		$('.panel').find('.box').click(function(){
-			$('.box').removeClass('RotateIn');
- 			if ($('.panel').find('.box').hasClass('RotateIn')) {
-				$(this).removeClass('RotateIn');
-			} else {
-				$(this).addClass('RotateIn');
-			}
-		});
- 	</script>
-
-
- </body>
-</html> 
+                        <ul class="experience--company-websites" itemscope itemtype="https://schema.org/Organization">
+                            <li itemprop="url">
+                                <a href="https://www.otiholding.com">Oti Holding official website</a>
+                            </li>
+                            <li itemprop="url">
+                                <a href="https://booking.coral.ru">Coral Travel online flight booking</a>
+                            </li>
+                            <li itemprop="url">
+                                <a href="https://www.coraltatil.com">Coral Travel domestic market</a>
+                            </li>
+                            <li itemprop="url">
+                                <a href="https://www.otiumhotels.com">Hotels which are owned by Oti Holding</a>
+                            </li>
+                        </ul>
+                    </p>
+                    <hr>
+                </li>
+                <li>
+                   
+                    <h3 class="experience--job-title">Web Designer & Front-End Developer</h3>
+                    <h4 class="experience--company-name">
+                        <span class="is-visually-hidden">Company Name</span>
+                        <a href="https://www.anextour.com/">Anex Tour</a>
+                    </h4>
+                    <h4 class="experience--dates-employed">
+                        <span class="is-visually-hidden">Dates Employed</span>
+                        <span>Mar 2012 – Oct 2014 ∙ 2 yrs 8 mos</span>
+                    </h4>
+                    <p class="experience--company-description">
+                        I was responsible to make new UI for B2B/B2C clients. I managed to project user interface
+                        phase during the implementation. I also supported customers, managed content of current project.
+                    </p>
+                    <hr>
+                </li>
+                <li>  
+                    <h3 class="experience--job-title">Front-End Developer</h3>
+                    <h4 class="experience--company-name">
+                        <span class="is-visually-hidden">Company Name</span>
+                        <a href="https://www.ulker.net.tr/">Ülker İnternet Hizmetleri Ltd. Şti.</a>
+                    </h4>
+                    <h4 class="experience--dates-employed">
+                        <span class="is-visually-hidden">Dates Employed</span>
+                        <span>Jan 2011 – Mar 2012 ∙ 1 yrs 3 mos</span>
+                    </h4>
+                    <p class="experience--company-description">
+                        I was responsible for implementing PSD to HTML website for each projects.
+                    </p>
+                </li>
+            </ul>
+        </section>
+    </main>    
+</body>
+</html>
