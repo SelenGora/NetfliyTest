@@ -1,0 +1,141 @@
+:root {
+    --maxWidth: 768px;
+    
+    --debugColor1: #D81159;
+    --debugColor2: #8F2D56;
+    --debugColor3: #218380;
+    --debugColor4: #FBB13C;
+    --debugColor5: #73D2DE;
+
+    --mainBg : #fff;
+    --mainColor: #1E4147;
+
+}
+
+/*
+ #FFFFFF and #1E4147
+contrast ratio: 11.04:1
+level of compliance
+AA normal / large
+AA non-text
+AAA normal / large
+
+#1E4147
+contrast ratio: 11.04:1
+level of compliance
+AA normal / large
+AA non-text
+AAA normal / large 
+*/
+
+body {
+    margin: 0;
+    color: var(--mainColor);
+    font-family: 'Calibri', Courier, monospace;
+    font-size: 16px;
+}
+
+a, a:link, a:visited, a:hover, a:active {
+    color: var(--mainColor);
+    /* text-decoration: none; */
+}
+
+.container {
+    background: var(--mainBg);
+    margin: 30px auto;
+    max-width: var(--maxWidth);
+    padding: 30px;
+    position: relative;
+}
+
+.container::after {
+    bottom: 0;
+    padding: 10px;
+    position: fixed;    
+    right: 0;
+}
+
+.container,
+.container::before,
+.container::after {
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.25);
+  border: 1px solid #bbb;
+}
+
+.container::before,
+.container::after {
+  content: "";
+  position: absolute;
+  height: 95%;
+  width: 99%;
+  background-color: #eee;
+}
+
+.container::before {
+  right: 15px;
+  top: 0;
+  transform: rotate(-1deg);
+  z-index: -1;
+}
+
+.container::after {
+  top: 5px;
+  right: -5px;
+  transform: rotate(1deg);
+  z-index: -2;
+}
+
+.is-visually-hidden {
+    display: block;
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.introduction p {
+    margin-top: 0;
+    margin-bottom: .5rem;
+
+}
+
+.intro-name {
+    margin-bottom: 0;
+}
+.intro-work {
+    margin-top: 0;
+}
+
+.proffesional-experience ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.proffesional-experience ul li {
+    border-top: 1px solid var(--mainColor);
+}
+
+.proffesional-experience ul li:first-child {
+    border-top: none;
+}
+.experience--job-title,
+.experience--company-name {
+    font-size: 1.125rem;
+}
+.experience--company-name {
+    font-weight: 300;
+    margin: 0;
+}
+.experience--dates-employed {
+    font-size: .875rem;
+    font-weight: 100;
+    margin: 0;
+}
+
+
+/* .experience--company-description {} */
