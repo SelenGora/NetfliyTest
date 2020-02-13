@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>For Taylan!</title>
+    <link href="https://fonts.googleapis.com/css?family=Amita&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="ryuk">
+        <div class="right-eye"></div>
+        <div class="left-eye"></div>
+        <div class="tooltip is-hidden">
+            <p>Happy Valentine's Day ♥</p>
+        </div>
+        <div class="hearts is-hidden">
+            <div class="heart">
+                <svg width="80" height="80" viewBox="0 0 800 700" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m263.42 235.15c-66.24 0-120 53.76-120 120 0 134.76 135.93 170.09 228.56 303.31 87.574-132.4 228.56-172.86 228.56-303.31 0-66.24-53.76-120-120-120-48.048 0-89.402 28.37-108.56 69.188-19.161-40.817-60.514-69.188-108.56-69.188z" />
+                </svg>
+            </div>
+            <div class="heart">
+                <svg width="70" height="70" viewBox="0 0 800 700" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m263.42 235.15c-66.24 0-120 53.76-120 120 0 134.76 135.93 170.09 228.56 303.31 87.574-132.4 228.56-172.86 228.56-303.31 0-66.24-53.76-120-120-120-48.048 0-89.402 28.37-108.56 69.188-19.161-40.817-60.514-69.188-108.56-69.188z" />
+                </svg>
+            </div>
+            <div class="heart">
+                <svg width="68" height="68" viewBox="0 0 800 700" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m263.42 235.15c-66.24 0-120 53.76-120 120 0 134.76 135.93 170.09 228.56 303.31 87.574-132.4 228.56-172.86 228.56-303.31 0-66.24-53.76-120-120-120-48.048 0-89.402 28.37-108.56 69.188-19.161-40.817-60.514-69.188-108.56-69.188z" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="wake-up">
+        click to wake up <br>Ryuk
+        <svg width="32" height="32" viewBox="0 0 10 16" version="1.1" aria-hidden="true">
+            <path fill-rule="evenodd" d="M10 8L4 3v3H0v4h4v3l6-5z"></path>
+        </svg>
+    </div>
+</body>
+<script>
+document.addEventListener("click", (e) => {
+	if (e.target && e.target.classList.contains("ryuk")) {
+		e.target.children[0].classList.add("blink");
+		document.querySelector(".hearts").classList.remove("is-hidden");
+		document.querySelector(".wake-up").classList.add("is-hidden");
+		document.querySelector(".tooltip").classList.remove("is-hidden");
+	}
+});
+</script>
+</html>
