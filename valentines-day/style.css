@@ -1,0 +1,171 @@
+html {
+  overflow: hidden;
+}
+
+body {
+  background: beige;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 100vh;
+  font-family: "Amita", cursive;
+}
+
+.ryuk {
+  position: relative;
+  cursor: pointer;
+  order: 1;
+  background-image: url("http://selengora.com/valentines-day/ryuk-noeye.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 130px;
+  width: 200px;
+}
+.ryuk .right-eye {
+  position: absolute;
+  width: 13px;
+  height: 9px;
+  border-radius: 50%;
+  left: 31px;
+  background: white;
+  top: 58px;
+  border-bottom: 2px solid black;
+}
+.ryuk .right-eye::before {
+  content: "";
+  width: 3px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+}
+.ryuk .right-eye::after {
+  content: "";
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 7px;
+  bottom: 1px;
+}
+.ryuk .right-eye.blink {
+  background: black;
+  -webkit-transform-origin: 50%;
+  -webkit-animation: blink 5s infinite;
+}
+.ryuk .left-eye {
+  position: absolute;
+  background: beige;
+  width: 8px;
+  height: 1px;
+  top: 65px;
+  left: 68px;
+  opacity: 1;
+  transform: rotate(145deg);
+}
+
+.tooltip {
+  border: 1px solid tomato;
+  position: absolute;
+  padding: 4px 8px;
+  border-radius: 10px;
+  top: -65px;
+  left: -210px;
+  font-size: 20px;
+  font-weight: 600;
+  color: tomato;
+}
+
+@-webkit-keyframes blink {
+  0%, 100% {
+    transform: scale(1, 0.05);
+  }
+  5%,
+    95% {
+    transform: scale(1, 1);
+  }
+}
+.is-hidden {
+  opacity: 0;
+}
+
+.heart {
+  position: absolute;
+}
+.heart:nth-child(1) svg {
+  opacity: 0;
+  -webkit-animation: heartUp 1.4s infinite ease-in;
+  animation: heartUp 1.4s infinite ease-in;
+}
+.heart:nth-child(2) svg {
+  position: absolute;
+  left: 1rem;
+  opacity: 0;
+  -webkit-animation: heartUp 1.4s 0.3s infinite ease-in;
+  animation: heartUp 1.4s 0.3s infinite ease-in;
+}
+.heart:nth-child(3) svg {
+  position: absolute;
+  left: 0.5rem;
+  opacity: 0;
+  -webkit-animation: heartUp 1.4s 0.6s infinite ease-in;
+  animation: heartUp 1.4s 0.6s infinite ease-in;
+}
+
+svg {
+  fill: #f58d9c;
+}
+
+@-webkit-keyframes heartUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0) rotate(10deg);
+    transform: translate3d(0, 0, 0) rotate(10deg);
+  }
+  50% {
+    opacity: 1;
+  }
+  65% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -35vh, 0) scale(1.2) rotate(-10deg);
+    transform: translate3d(0, -35vh, 0) scale(1.2) rotate(-10deg);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes heartUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0) rotate(10deg);
+    transform: translate3d(0, 0, 0) rotate(10deg);
+  }
+  50% {
+    opacity: 1;
+  }
+  65% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -35vh, 0) scale(1.2) rotate(-10deg);
+    transform: translate3d(0, -35vh, 0) scale(1.2) rotate(-10deg);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.wake-up {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  text-align: center;
+  align-items: center;
+  font-size: 16px;
+}
